@@ -1,0 +1,91 @@
+/*===================================================
+GALLERY SECTION ANIMATION
+====================================================*/
+
+p {                     /*Targeting the paragraph text (adding style to it)*/
+	font-weight: 300;
+	line-height: 30px;
+	padding-bottom: 15px;   /*Text padding from bottom of image*/
+}
+
+.photo {
+	position: relative; 
+	line-height: 0;					/*Actually a top, left, right, and bottom. 
+									But if all the same, just put 1 value */
+						
+	margin-bottom: 2cm;  			/*Same here*/
+	
+	overflow: hidden;				/*Anything beyond border of image is hidden */
+	
+	border-radius: 8px;				/*For rounding edges */
+	padding: 1px;					/*Spacing for INSIDE of element */
+	border: 1px solid #021a40;		
+	background-color: #4F6EAD;
+	box-shadow: 2px 2px 10px rgba(0,0,0,0.7);  
+}
+
+.photo-container {
+	text-align: center;				/*Center text*/
+	margin: 15px auto;				/*First arg handles top and bottom, second
+									handles left and right*/
+	width: 300px;					/*Full size of photo*/
+	height: 169px;
+}
+
+.photo-container img{
+	max-width: 100%;				/*Uses full size of photo*/
+	width: 300px;
+	height: 169px;
+}
+
+.photo-overlay {
+	color: #fff;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+	justify-content: center; 		/*for centering text inside .photo*/
+	align-items: center;
+	background: rgba(0,0,0,0.5);
+}
+
+.white-head {						/*Click to enlarge text*/
+	color: #c9bdaa;
+	margin-top: 5%;
+	line-height: 30px;
+	padding-bottom: 20px;
+}
+
+/*===================================================
+PHOTO OVERLAY TRANSITIONS	
+====================================================*/
+
+.photo-overlay {
+	opacity: 0;
+	transition: opacity 0.1s;		/*Property, duration. Creates animation */
+	border-radius: 10px;
+	cursor: pointer;				/*Changes it to a hand when hovered*/
+}
+
+.photo-overlay  p{
+	width: 100%;
+	height: 100%;
+	color: #fff;
+}
+
+.photo-overlay:hover {
+	opacity: 1;						/*100% opacity*/
+}
+
+.photo img {
+	transition: transform 0.5s;
+	transform-origin: 50% 50%;		/*Adjusts the angle at which you view. 50/50 means straight on*/
+}
+
+.photo:hover img {
+	transform: scale(1.1);			/*Scales photo by 1.1 times*/
+}
+
